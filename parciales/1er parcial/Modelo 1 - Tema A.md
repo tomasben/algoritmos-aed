@@ -110,8 +110,7 @@ FIN_ACCION
 Un supermercado mayorista que cuenta con un sistema de atención en cajas necesita un informe
 de ventas, para lo cual cuenta con el archivo secuencial VENTAS que contiene información de
 todos los tickets emitidos durante el mes de JUNIO. Para cada venta se registra:
-VENTAS, Ordenado por Nro de Caja, Forma de pago, Nro de ticket, fecha de venta, cantidad de articulos
-y el importe de la venta
+VENTAS, Ordenado por Nro de Caja, Forma de pago, Nro de ticket
 
 | Nro de Caja | Forma de pago (EF, TD y TC) | Nro de ticket | Fecha de venta | Cantidad de artículos | Importe de la venta |
 |-------------|-----------------------------|---------------|----------------|-----------------------|---------------------|
@@ -138,69 +137,8 @@ que como estan ordenandas entonces no se van a intercalar
 ```
 ACCION ejercicio ES
   AMBIENTE
-    Fecha = REGISTRO
-      dia: 1..31
-      mes: 1..12
-      año: N(4)
-    FIN_REGISTRO
 
-    Venta = REGISTRO
-      nro_caja: entero
-      metodo: ("EF", "TD", "TC")
-      nro_tik: entero
-      fecha: Fecha
-      cant: entero
-      importe: real
-    FIN_REGISTRO
-
-    Informe = REGISTRO
-      nro_caja: entero
-      tot_efec: entero
-      tot_tarj: entero
-    FIN_REGISTRO
-
-    salida: archivo de Informe
-    inf: Informe
-    arch: archivo de Venta ordenado por nro_caja
-    reg: Venta
-
-    caja_act, tot_efect, tot_tarj, articulos: entero
-
-    PROCEDIMIENTO registar_pago(reg: Venta) ES
-      AMBIENTE
-      PROCESO
-        SEGUN reg.metodo HACER
-          "EF":
-            tot_efec := tot_efect + cant
-            articulos := articulos + cant
-          "TD":
-            tot_tarj := tot_tarj + cant
-            articulos := articulos + cant
-          "TC":
-            tot_tarj := tot_tarj + cant
-            articulos := articulos + cant
-        FIN_SEGUN
-    FIN_PROCEDIMIENTO
   PROCESO
-    ABRIR E/ (arch); LEER(arch, reg)
 
-    MIENTRAS NFDA(arch) HACER
-      caja_act := reg.nro_caja
-
-      MIENTRAS reg.nro_caja == caja_act HACER
-        registar_pago(reg)
-        LEER(arch, reg)
-      FIN_MIENTRAS
-
-      inf.nro_caja := caja_act
-      inf.tot_efec := tot_efect
-      inf.tot_tarj := tot_tarj
-
-      ESC("Total de articulos vendidos en caja ", caja_act, ":", articulos)
-
-    FIN_MIENTRAS
-
-    CERRAR(arch)
-    CERRAR(salida)
-FIN_PROCESO
+FIN_ACCION
 ```
