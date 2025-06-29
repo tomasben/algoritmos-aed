@@ -110,7 +110,7 @@ ACCION ejercicio ES
       ESCRIBIR("Tipo 'Protocolo': ", cant_pro)
 
       ESCRIBIR("Y la cantidad de asientos reservados para la zona elegida ", zona,
-      " fuerob: ", asientos)
+      " fueron: ", asientos)
 
       cant_emp := 0; cant_par := 0; cant_pro := 0;
       asientos_tot := 0; asientos := 0;
