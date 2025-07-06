@@ -42,7 +42,7 @@ un usuario. EJ: nombreusuario+dni+dni#nombreusuario+dni+dni#
 2. Se desea conocer cuántos usuarios compraron una cantidad de entradas distinta a la que declararon
 en la fila virtual.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -166,7 +166,7 @@ entradas vendidas supera las 1000 con el siguiente formato:
 
 2. Informar el total de ventas del 1 de junio al 1 julio, discriminado por plataforma y ciudad.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

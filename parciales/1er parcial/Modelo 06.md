@@ -21,7 +21,7 @@ siempre y cuando el protocolo de ese paciente comience con la letra "A".
 2. Informar el total recaudado por tipo de estudio.
 3. Informar el porcentaje de estudios de tipo "A" en relación al total de estudios.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -133,7 +133,7 @@ sucursal, el área de servicio y total general, siempre y cuando la cantidad de 
 3. Informar si el total facturado por la sucursal 50 representa más o menos del 20% del total
 facturado por toda la empresa.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

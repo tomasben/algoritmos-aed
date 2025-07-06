@@ -42,7 +42,7 @@ estructura:
 | Nombre del Artículo | Cant. unid entregadas en suc | Cant. unid enviadas a domicilio |
 |---------------------|------------------------------|---------------------------------|
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -172,7 +172,7 @@ cuya fecha de última reposición sea anterior a una fecha ingresada por el usua
 última reposición sea anterior a la fecha ingresada por el usuario. Debe contener sucursal y
 código de articulo.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

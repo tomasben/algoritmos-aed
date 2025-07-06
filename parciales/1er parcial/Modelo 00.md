@@ -26,7 +26,7 @@ Informar, para cada estadio:
 Generar una secuencia de salida de enteros, donde cada elemento indicará la cantidad de reservas para cada estadio.
 
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -144,7 +144,7 @@ La consigna solicita:
 - Generar un informe que muestre por nivel, cadena y total general: Total de hoteles con más de 300 habitaciones que se encuentren en ciudades sedes del Mundial de fútbol.
 - Generar un fichero de salida que contenga los siguientes datos de los hoteles que se encuentran en ciudades sede del Mundial de fútbol: codigo_cadena, nivel_hotel, codigo_hotel, nombre_hotel y cantidad_habitaciones.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

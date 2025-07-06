@@ -19,7 +19,7 @@ La empresa solicita un algoritmo que cumpla con las siguientes consignas:
 1. Generar una nueva secuencia que contenga los tickets correspondientes a un horario ingresado por el usuario.
 2. Informar total general de tickets vendidos, total de tickets por sector y porcentaje de cada uno sobre el total general.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -153,7 +153,7 @@ Consigna:
 2. ¿Cuantos totalizadores se necesitan? Indicar cuales son (utilizar nombres descriptivos del valor que representan)
 3. Escriba la subacción que permite cumplir con el punto a) del enunciado.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 1. Un solo corte, porque se pide discriminar los datos por barrio y total general, donde el último no requiere un corte.

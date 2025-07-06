@@ -48,7 +48,7 @@ docentes en condiciones de jubilarse.
 2. Informar por regional la cantidad de docentes que pueden jubilarse y la cantidad de
 docentes que no pueden.
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
@@ -144,7 +144,7 @@ de jubilarse.
 | Regional | Cantidad Jubilados |
 |----------|--------------------|
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

@@ -28,7 +28,7 @@ consecuencia la cantidad de veces que vamos a iterarla con un PARA
 - Crear secuencia de salida con tickets de monto mayor a 50.000
 - Llevar el control del ticket con mayor importe para cada sucursal
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```

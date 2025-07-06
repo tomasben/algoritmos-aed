@@ -50,7 +50,7 @@ habitaciones dobles y suites.
 3) Informar cuáles son los hoteles que tuvieron mayor recaudación en habitaciones dobles (DOB)
 que en suites (SUITE).
 
-<details open>
+<details>
 <summary>Solución</summary>
 
 ```
