@@ -42,6 +42,106 @@ un usuario. EJ: nombreusuario+dni+dni#nombreusuario+dni+dni#
 2. Se desea conocer cuántos usuarios compraron una cantidad de entradas distinta a la que declararon
 en la fila virtual.
 
+```
+ACCION ejercicio ES
+  AMBIENTE
+    fila, compras, salida: secuencia de caracter
+    lug, fac: caracter
+    i, k, j: entero
+    esperadas, compradas, cant_dist: entero
+    metodo: caracter
+
+    FUNCION convertir(car: caracter): entero ES
+      SEGUN car HACER
+        '0': convertir := 0
+        '1': convertir := 1
+        '2': convertir := 2
+        '3': convertir := 3
+        '4': convertir := 4
+        '5': convertir := 5
+        '6': convertir := 6
+        '7': convertir := 7
+        '8': convertir := 8
+        '9': convertir := 9
+    FIN_FUNCION
+  PROCESO
+    ARR(fila); AVZ(fila, lug)
+    ARR(compras); AVZ(compras, fac)
+    CREAR(salida)
+
+    cant_dist := 0
+
+    MIENTRAS NO FDS(fila) HACER
+      // avanzo los datos irrelevantes del usuario en la fila
+      // 4 por la hora y 6 por el numero de fila
+      PARA i := 1 hasta 10 HACER
+        AVZ(fila, lug)
+      FIN_PAR
+
+      metodo := lug
+      AVZ(fila, lug)
+
+      esperadas := convertir(lug)
+      AVZ(fila, lug)
+      // avanzo el '#' para llegar al siguiente usuario en fila o final de secuencia
+      AVZ(fila, lug)
+
+      PARA k := 1 HASTA 6 HACER
+        AVZ(compras, fac)
+      FIN_PARA
+
+      compradas := 0
+
+      // comparo el caracter actual para saber si un usuario abandono la fila
+      // si es '#' quiere decir que abandono y la secuencia es "#+?"
+      SI fac <> '#' ENTONCES
+        MIENTRAS fac <> '+' HACER
+          SI metodo = 'T' ENTONCES
+            ESCRIBIR(salida, fac)
+          FIN_SI
+
+          AVZ(compras, fac)
+        FIN_MIENTRAS
+
+        SI metodo = 'T' ENTONCES
+          ESCRIBIR(salida, '+')
+        FIN_SI
+
+        MIENTRAS fac <> '?' HACER
+          AVZ(compras, car)
+
+          MIENTRAS fac <> '.' Y fac <> '?' HACER
+            AVZ(compras, fac)
+          FIN_MIENTRAS
+
+          compradas := compradas + 1
+        FIN_MIENTRAS
+        AVZ(compras, fac)
+
+        SI metodo = 'T' ENTONCES
+          ESCRIBIR(salida, '#')
+        FIN_SI
+
+        SI compradas <> esperadas ENTONCES
+          cant_dist := cant_dist + 1
+        FIN_SI
+      CONTRARIO
+        // avanzo los caracteres '#', '+' y '?'
+        AVZ(compras, fac)
+        AVZ(compras, fac)
+        AVZ(compras, fac)
+      FIN_SI
+    FIN_MIENTRAS
+
+    ESCRIBIR("La cantidad de usuarios que compraron una cantidad de entradas
+    diferente a la declarada fue de: ", cant_dist, " usuarios.")
+
+    CERRAR(fila)
+    CERRAR(compras)
+    CERRAR(salida)
+FIN_ACCION
+```
+
 ## Ejercicio 2
 Basados en el escenario del ejercicio 1, se tiene un archivo secuencial que contiene las informaciones
 de ventas finales de entradas para el festival, realizadas desde el 1 de mayo del 2023 hasta el 1 de
@@ -60,3 +160,87 @@ entradas vendidas supera las 1000 con el siguiente formato:
 |-----------|--------|----------|
 
 2. Informar el total de ventas del 1 de junio al 1 julio, discriminado por plataforma y ciudad.
+
+```
+ACCION ejercicio ES
+  AMBIENTE
+    Fecha = REGISTRO
+      dia: 1..31
+      mes: 1..12
+      año: N(4)
+    FIN_REGISTRO
+
+    Ticket = REGISTRO
+      provincia: AN(30)
+      ciudad: AN(30)
+      plataforma: N(2)
+      fecha: Fecha
+      entradas: N(1)
+    FIN_REGISTRO
+
+    Informe = REGISTRO
+      provincia: AN(30)
+      ciudad: AN(30)
+      entradas: N(5)
+    FIN_REGISTRO
+
+    ventas: archivo de Ticket ordenado por provincia, ciudad, plataforma, fecha
+    tik: Ticket
+    salida: archivo de Informe
+    inf: Informe
+
+    cant_plat, cant_ciud: entero
+    resg_plat: N(2)
+    resg_ciud: AN(30)
+
+    PROCEDIMIENTO corte_ciudad() ES
+      corte_plataforma()
+      ESCRIBIR("El total de entradas vendidas desde el 1 de junio y hasta el 1 de julio
+      para la ciudad ", resg_ciud, " fue de: ", cant_ciud, " entradas.")
+
+      SI cant_ciud > 100 ENTONCES
+        inf.provincia := tik.provincia
+        inf.ciudad := resg_ciud
+        inf.entradas := cant_ciud
+        ESCRIBIR(salida, inf)
+      FIN_SI
+
+      cant_ciud := 0
+      resg_ciud := tik.ciudad
+    FIN_PROCEDIMIENTO
+
+    PROCEDIMIENTO corte_plataforma() ES
+      ESCRIBIR("El total de entradas vendidas desde el 1 de junio hasta el 1 de julio para
+      la plataforma ", resg_plat, " fue de: ", cant_plat, " entradas.")
+      cant_ciud := cant_ciud + cant_plat
+      cant_plat := 0
+      resg_plat := tik.plataforma
+    FIN_PROCEDIMIENTO
+  PROCESO
+    ABRIR E/ (ventas); LEER(ventas, tik)
+    ABRIR /S (salida)
+
+    resg_ciud := tik.ciudad; resg_plat := tik.plataforma
+    cant_plat := 0; cant_ciud := 0
+
+    MIENTRAS NO FDA(ventas) HACER
+      SI resg_ciud <> tik.ciudad ENTONCES
+        corte_ciudad()
+      CONTRARIO
+        SI resg_plat <> tik.plataforma ENTONCES
+          corte_plataforma()
+        FIN_SI
+      FIN_SI
+
+      SI tik.fecha.año = 2023 ENTONCES
+        SI tik.fecha.mes = 6 ENTONCES
+          cant_plat := cant_plat + tik.entradas
+        FIN_SI
+      FIN_SI
+
+      LEER(ventas, tik)
+    FIN_MIENTRAS
+
+    CERRAR(ventas)
+    CERRAR(salida)
+FIN_ACCION

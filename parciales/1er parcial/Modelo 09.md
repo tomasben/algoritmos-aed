@@ -12,7 +12,8 @@ correspondiente a algunos de los escultores de Europa, pues en el año de inicio
 en el último dígito una vocal (a= 1, e = 2, i=3).
 
 Por ello le solicitan a Ud que diseñe un algoritmo en pseudocódigo que permita:
-1. Generar tres secuencias de salida, separando escultores por continente. Tener en cuenta que para la secuencia de Europa hay que verificar y corregir el error del último dígito del año de inicio.
+1. Generar tres secuencias de salida, separando escultores por continente. Tener en cuenta que para
+la secuencia de Europa hay que verificar y corregir el error del último dígito del año de inicio.
 2. Informar cantidad de escultores por continente que hayan comenzado en la disciplina después del año 2000.
 3. Informar porcentaje de escultores con información errónea sobre el total de escultores.
 

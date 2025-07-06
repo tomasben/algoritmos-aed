@@ -20,10 +20,14 @@ En donde:
 Escribir un algoritmo que permita:
 
 Informar, para cada estadio:
-  a) La cantidad de reservas de cada tipo (Empresa-Particular-Protocolo).
-  b) La cantidad de reservas realizadas en una zona en particular del estadio, ingresada por el usuario.
+1. La cantidad de reservas de cada tipo (Empresa-Particular-Protocolo).
+2. La cantidad de reservas realizadas en una zona en particular del estadio, ingresada por el usuario.
 
 Generar una secuencia de salida de enteros, donde cada elemento indicará la cantidad de reservas para cada estadio.
+
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -121,6 +125,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 Además, en pos de analizar la capacidad hotelera de Qatar, el Ministerio de Turismo, solicitó a todos
 los hoteles el estado habitacional de cada cadena de hoteles.
@@ -137,6 +143,9 @@ El Ministerio organizó un concurso para todos los alumnos de ISI que hayan apro
 La consigna solicita:
 - Generar un informe que muestre por nivel, cadena y total general: Total de hoteles con más de 300 habitaciones que se encuentren en ciudades sedes del Mundial de fútbol.
 - Generar un fichero de salida que contenga los siguientes datos de los hoteles que se encuentran en ciudades sede del Mundial de fútbol: codigo_cadena, nivel_hotel, codigo_hotel, nombre_hotel y cantidad_habitaciones.
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio2 ES
@@ -223,3 +232,5 @@ ACCION ejercicio2 ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>
