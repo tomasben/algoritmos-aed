@@ -28,6 +28,9 @@ consecuencia la cantidad de veces que vamos a iterarla con un PARA
 - Crear secuencia de salida con tickets de monto mayor a 50.000
 - Llevar el control del ticket con mayor importe para cada sucursal
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION parcial ES
   AMBIENTE
@@ -106,6 +109,8 @@ ACCION parcial ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio N° 2 - No resuelto
 Un supermercado mayorista que cuenta con un sistema de atención en cajas necesita un informe
 de ventas, para lo cual cuenta con el archivo secuencial VENTAS que contiene información de
@@ -127,18 +132,3 @@ y total artículos que se pagaron con tarjetas (TD o TC). (1 registro por caja)
 
 3) Informar cuáles son las cajas que tuvieron mayor cantidad de artículos vendidos en efectivo
 que con tarjetas.
-
-**Razonamiento:**
-- 1 archivo con registros de Ventas y ordenado por nro de caja
-- Si bien no se puede almacenar todas las cajas para compararlas en todo momento, sabemos
-que como estan ordenandas entonces no se van a intercalar
-- Llevar la cantidad total de articulos vendidos
-
-```
-ACCION ejercicio ES
-  AMBIENTE
-
-  PROCESO
-
-FIN_ACCION
-```

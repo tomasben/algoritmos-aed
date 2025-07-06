@@ -42,6 +42,9 @@ estructura:
 | Nombre del Artículo | Cant. unid entregadas en suc | Cant. unid enviadas a domicilio |
 |---------------------|------------------------------|---------------------------------|
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   ACCION
@@ -147,6 +150,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 Consigna: la misma cadena de supermercados, además cuenta con un archivo secuencial con el stock
 de todos sus artículos con el siguiente formato:
@@ -166,6 +171,9 @@ cuya fecha de última reposición sea anterior a una fecha ingresada por el usua
 2. Generar un archivo de salida que contenga todos los artículos del rubro “Bazar” cuya fecha de
 última reposición sea anterior a la fecha ingresada por el usuario. Debe contener sucursal y
 código de articulo.
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -265,3 +273,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>

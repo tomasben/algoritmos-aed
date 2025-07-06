@@ -48,6 +48,9 @@ docentes en condiciones de jubilarse.
 2. Informar por regional la cantidad de docentes que pueden jubilarse y la cantidad de
 docentes que no pueden.
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -120,6 +123,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 Consigna: la Universidad Tecnológica Nacional dispone de un archivo secuencial denominado
 JUBILAR con los datos de los docentes en condiciones de jubilarse, ordenado por regional,
@@ -138,6 +143,9 @@ de jubilarse.
 
 | Regional | Cantidad Jubilados |
 |----------|--------------------|
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -226,3 +234,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>

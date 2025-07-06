@@ -50,6 +50,9 @@ habitaciones dobles y suites.
 3) Informar cuáles son los hoteles que tuvieron mayor recaudación en habitaciones dobles (DOB)
 que en suites (SUITE).
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -138,3 +141,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>

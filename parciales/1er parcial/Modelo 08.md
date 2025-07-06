@@ -19,6 +19,9 @@ La empresa solicita un algoritmo que cumpla con las siguientes consignas:
 1. Generar una nueva secuencia que contenga los tickets correspondientes a un horario ingresado por el usuario.
 2. Informar total general de tickets vendidos, total de tickets por sector y porcentaje de cada uno sobre el total general.
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -124,6 +127,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 
 Dado el siguiente Enunciado, contestar los puntos que se enumeran en la Consigna. NO HACER EL ALGORITMO.
@@ -145,18 +150,23 @@ Se pide:
 
 Consigna:
 1. Responda: cuantos niveles de corte hay? Enumere cuales son. Escriba el trozo de algoritmo donde se verifica si hay corte.
-Respuesta: 1 solo, porque se pide discriminar los datos por barrio y total general, donde el último no requiere un corte.
+2. ¿Cuantos totalizadores se necesitan? Indicar cuales son (utilizar nombres descriptivos del valor que representan)
+3. Escriba la subacción que permite cumplir con el punto a) del enunciado.
 
+<details open>
+<summary>Solución</summary>
+
+1. Un solo corte, porque se pide discriminar los datos por barrio y total general, donde el último no requiere un corte.
 ```
 SI resg_barrio <> reg.barrio ENTONCES
   corte_barrio()
 FIN_SI
 ```
 
-2. ¿Cuantos totalizadores se necesitan? Indicar cuales son (utilizar nombres descriptivos del valor que representan)
-Respuesta: se necesitan 2 totalizadores, 1 para el consumo de los usuarios por cada barrio y otro para el consumo general.
+2. Se necesitan 2 totalizadores, 1 para el consumo de los usuarios por cada barrio y otro para el consumo general.
 
-3. Escriba la subacción que permite cumplir con el punto a) del enunciado.
+3.
+
 ```
 PROCEDIMIENTO corte_barrio() ES
   ESCRIBIR("El consumo total registrado para el barrio ", resg_barrio,
@@ -166,3 +176,5 @@ PROCEDIMIENTO corte_barrio() ES
   resg_barrio := reg.barrio
 FIN_PROCEDIMIENTO
 ```
+
+</details>

@@ -42,6 +42,9 @@ un usuario. EJ: nombreusuario+dni+dni#nombreusuario+dni+dni#
 2. Se desea conocer cuántos usuarios compraron una cantidad de entradas distinta a la que declararon
 en la fila virtual.
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -142,6 +145,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 Basados en el escenario del ejercicio 1, se tiene un archivo secuencial que contiene las informaciones
 de ventas finales de entradas para el festival, realizadas desde el 1 de mayo del 2023 hasta el 1 de
@@ -160,6 +165,9 @@ entradas vendidas supera las 1000 con el siguiente formato:
 |-----------|--------|----------|
 
 2. Informar el total de ventas del 1 de junio al 1 julio, discriminado por plataforma y ciudad.
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -244,3 +252,6 @@ ACCION ejercicio ES
     CERRAR(ventas)
     CERRAR(salida)
 FIN_ACCION
+```
+
+</details>

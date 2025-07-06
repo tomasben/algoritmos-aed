@@ -21,6 +21,9 @@ siempre y cuando el protocolo de ese paciente comience con la letra "A".
 2. Informar el total recaudado por tipo de estudio.
 3. Informar el porcentaje de estudios de tipo "A" en relación al total de estudios.
 
+<details open>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -104,6 +107,8 @@ ACCION ejercicio ES
 FIN_ACCION
 ```
 
+</details>
+
 ## Ejercicio 2
 Una empresa de servicios agropecuarios con diversas sucursales en el país necesita un
 programa que le permita operar con los diferentes servicios que tiene contratados. Para
@@ -127,6 +132,9 @@ sucursal, el área de servicio y total general, siempre y cuando la cantidad de 
 
 3. Informar si el total facturado por la sucursal 50 representa más o menos del 20% del total
 facturado por toda la empresa.
+
+<details open>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -216,3 +224,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACION
 ```
+
+</details>
