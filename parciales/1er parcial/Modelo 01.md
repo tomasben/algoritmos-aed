@@ -1,17 +1,15 @@
-## Ejercicio N° 1
+## Ejercicio 1
 Un supermercado mayorista necesita un informe de ventas, para lo cual cuenta con una secuencia
 de caracteres y una secuencia de enteros, ambas contienen información del mes de JUNIO, para
 las distintas sucursales. La estructura de dichas secuencias es la siguiente:
 
 **Secuencia de caracteres Sucursal:**
 (cantidad indeterminada de caracteres), cantidad de tickets (3 caracteres): sucursal & cantidad de tickets....FDS
-| R | e | s | i | s | t | e | n | c | i | a | & | 0 | 2 | 5 | B | a | r | r | a | n | q | u | e | r | a | s | & | 1 | 2 | 3 | ...FDS |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|--------|
+Resistencia&025Barranqueras&123...FDS
 
 **Secuencia de enteros para cada ticket:**
 Forma de pago (1: efectivo, 2: tarjeta débito y 3: tarjeta crédito), Nro ticket, cantidad de artículos, importe
-| 1 | 2345 | 9 | 12500 | 3 | 2950 | 4 | 9864 |...FDS |
-|---|------|---|-------|---|------|---|------|-------|
+1 | 2345 | 9 | 12500 | 3 | 2950 | 4 | 9864 |...FDS
 
 Si considera necesario, puede utilizar una función ConvertiraNumero(caracter), que recibe como
 parámetro un carácter y devuelve un dato entero. No es necesario desarrollar la función.
@@ -111,7 +109,7 @@ FIN_ACCION
 
 </details>
 
-## Ejercicio N° 2 - No resuelto
+## Ejercicio 2
 Un supermercado mayorista que cuenta con un sistema de atención en cajas necesita un informe
 de ventas, para lo cual cuenta con el archivo secuencial VENTAS que contiene información de
 todos los tickets emitidos durante el mes de JUNIO. Para cada venta se registra:

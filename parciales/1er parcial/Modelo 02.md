@@ -1,4 +1,4 @@
-## Ejercicio N° 1
+## Ejercicio 1
 Una cadena de hoteles necesita un informe de ocupación y pagos para el mes de JUNIO. Para
 esto, se cuenta con dos secuencias de datos:
 
@@ -6,17 +6,13 @@ esto, se cuenta con dos secuencias de datos:
 Estructura: Hotel (cantidad indeterminada de caracteres) & cantidad de reservas (3 caracteres)
 hotel & cantidad de reservas....FDS
 
-*Ejemplo:*
-| H | o | t | e | l | A | l | a | s | & | 3 | 4 | 0 | H | o | t | e | l | B | a | h | i | a | & | 9 | 9 | 9 | …FDS |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|------|
+*Ejemplo:* HotelAlas&340HotelBahia&999…FDS
 
 **Secuencia de enteros:**
 Estructura: Para cada reserva: Nro de reserva, tipo de habitación (1: single, 2: doble, 3: suite),
 cantidad de noches, importe.
 
-*Ejemplo:*
-| 1234 | 1 | 3 | 120.000 | 2345 | 3 | 2 | 65.000 |...FDS |
-|------|---|---|---------|------|---|---|--------|-------|
+*Ejemplo:* 1234 | 1 | 3 | 120.000 | 2345 | 3 | 2 | 65.000 |...FDS
 
 Nota: La función ConvertiraNumero(caracter) puede ser utilizada si se considera necesario para
 convertir un carácter a un dato entero.
@@ -26,7 +22,7 @@ Se pide escribir un algoritmo que permita:
 cantidad de reservas de habitaciones dobles.
 2) Promedio de reservas de habitaciones dobles por hotel.
 
-## Ejercicio N° 2
+## Ejercicio 2
 La cadena de hoteles del ejercicio anterior cuenta con un sistema de gestión de reservas y ahora
 le solicita a Ud. un informe de ocupación y facturación para el mes de JUNIO. Para cada reserva
 se registra:
