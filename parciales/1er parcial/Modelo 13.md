@@ -1,49 +1,42 @@
 ## Ejercicio 1
-Una Empresa que distribuye productos farmacéuticos dispone de una secuencia de
-caracteres con la siguiente información sobre sus productos:
+La empresa "Caminos del Litoral" quiere conocer las estadísticas del tráfico existente
+en el puente General Belgrano (popularmente conocido como Puente Chaco Corrientes).
+Para esto cuenta con los datos del movimiento ocurrido en el mes de junio de 2024 en un
+día (desde el día 1 del mes, hasta 30), sabiendo que todos los días hubieron movimientos,
+se dispone de una secuencia de caracteres con el siguiente formato:
 
-- Venta libre o con receta: VL - RE (2 caracteres)
-- Línea terapéutica: A(antiinflamatorio) – G(gastroenterológica) – R(respiratoria/antialérgica)(1 carácter)
-- Nombre del producto: cantidad no conocida de caracteres, finaliza con el carácter #
+día(2 caracter)ESferiado(S o N)InformacionDeVehiculos! [...]día(2 caracter)ESferiado(S o N)InformacionDeVehiculos!
 
-Se ubican agrupados por Laboratorios, al inicio de cada grupo está el nombre del laboratorio
-y luego un guión, y el fin de cada grupo se indica @.
+Donde InformacionDeVehiculos se corresponde con:
+Categoria (1 caracter: 1..5) HHMM(horaminuto) Patente (7 caracteres)$
 
 *Ejemplo:*
-PharmaS.A.-VLAibuflash#REAcalmidol#REGlanzopral#VLRalerpriv#...#...#@Tecnoquimica-VLGsertal#VLAibuprofeno#...#...#@Bago-...#...#@FDS
+12S22230AC13FE32231AB45HI42231AB21HU13N58615AD23HF_!
 
-La empresa solicita:
-1. Generar dos secuencias de salida a fin de disponer, por separado, los datos de
-los productos que son de “venta libre” y los que son de venta “con receta”; los datos
-que le interesa tener son: línea terapéutica y nombre del producto, indicando el fin
-de cada producto con el carácter #.
+El monto a pagar del peaje depende de la categoría. Se puede obtener a partir de una
+función ya implementada, monto_peaje(), que recibe como parámetro el carácter de la
+categoría.
 
-*Ejemplo:* Aibuflash#Ralerpriv#Gsertal#Aibuprofeno#...#...#...#FDS
-
-2. Se pide además un listado (por pantalla) de cantidad de productos de venta “con receta”
-de la línea “gastroenterológica”, por Laboratorio. Por ejemplo:
-
-**Laboratorio**		**Cantidad**
-PharmaS.A		      50
-Tecnoquimica		  87
-Bago		          23
+Se le solicita:
+1. Generar una secuencia de salida con la información de todos los vehículos de una determinada
+categoría (que ingrese el usuario) y que han circulado los días feriados. Interesará conocer:
+HHMMPatente (separar la información de cada vehículo por el carácter '#'.
+2. Por cada día, indicar la cantidad recaudada.
+3. Porcentaje de vehículos de cada categoría sobre el total.
 
 ## Ejercicio 2
-a misma Empresa del ejercicio 1 dispone de un archivo secuencial con la siguiente
-información de su stock de productos, ordenado por laboratorio, código de producto
-y lote.
+Los datos históricos de los vehículos que pasaron por el peaje se encuentra en un archivo
+con el siguiente formato:
 
-| Laboratorio N(3) | Código Producto N(4) | Lote AN(5) | Descripción AN(150) | Cantidad N(4) | Fecha_vencimiento (dd-mm-aaaa) |
-|------------------|----------------------|------------|---------------------|---------------|--------------------------------|
+PEAJE (Ordenado por año, mes, día, categoría y patente)
 
-Hay varios registros para cada código de producto, con distintos números de lote,
-el cual es único. La Empresa necesita:
-1. Generar otro archivo de salida que contenga los lotes vencidos (cuya fecha de
-vencimiento sea posterior a la actual), con el siguiente formato:
+| Año | Mes | Día | Categoría | Patente | Cantidad de pases |
+|-----|-----|-----|-----------|---------|-------------------|
 
-| Laboratorio N(3) | Código Producto N(4) |	Lote AN(5) | Cantidad N(4) | Fecha_vencimiento (aaaa-mm-dd) |
-|------------------|----------------------|------------|---------------|--------------------------------|
+Se le solicita:
+1. Informar la cantidad total de vehículos que pasaron por año y mes, y total general.
+2. Informar el año en el que hubo la mayor cantidad de pases.
+3. Generar un archivo de salida con la siguiente información:
 
-2. Mostrar por pantalla la cantidad total de productos vencidos por Laboratorio,
-Código de Producto y total General.
-3. Al final informar cuál fue el laboratorio con mayor cantidad de productos vencidos
+| Año | Mes | Día | Cantidad de pases |
+|-----|-----|-----|-------------------|

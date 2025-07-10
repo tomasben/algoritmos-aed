@@ -211,6 +211,7 @@ ACCION ejercicio ES
 
       LEER(entrada, serv)
     FIN_MIENTRAS
+    corte_sucur()
 
     ESCRIBIR("El total generado por la empresa en concepto de prestacion
     de servicios fue de $", cant_gral)

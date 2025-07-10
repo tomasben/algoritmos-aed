@@ -17,14 +17,6 @@ la secuencia de Europa hay que verificar y corregir el error del último dígito
 2. Informar cantidad de escultores por continente que hayan comenzado en la disciplina después del año 2000.
 3. Informar porcentaje de escultores con información errónea sobre el total de escultores.
 
-## Ejercicio 2
-La Fundación Urunday cuenta con un archivo con información de emplazamiento de esculturas en la ciudad.
-
-ECL, ordenado por AÑO, MES, MATERIAL, CODIGO
-
-| AÑO N(4) | MES N(2) | MATERIAL (M: Mármol - D: Madera) | CODIGO AN(12) | NOMBRE AN(20) |
-|----------|----------|----------------------------------|---------------|---------------|
-
 <details>
 <summary>Solución</summary>
 
@@ -125,6 +117,14 @@ FIN_ACCION
 
 </details>
 
+## Ejercicio 2
+La Fundación Urunday cuenta con un archivo con información de emplazamiento de esculturas en la ciudad.
+
+ECL, ordenado por AÑO, MES, MATERIAL, CODIGO
+
+| AÑO N(4) | MES N(2) | MATERIAL (M: Mármol - D: Madera) | CODIGO AN(12) | NOMBRE AN(20) |
+|----------|----------|----------------------------------|---------------|---------------|
+
 Realizar un algoritmo en pseudocódigo que permita:
 1. Obtener un informe con el total de esculturas emplazadas por Año, Mes y Material. Y un total general.
 Dar al informe el formato que considere adecuado.
@@ -134,6 +134,9 @@ EMPL, ordenado por MES, MATERIAL
 
 | MES N(2) | MATERIAL (M:Mármol - D:Madera) | CANT N(3) |
 |----------|--------------------------------|-----------|
+
+<details>
+<summary>Solución</summary>
 
 ```
 ACCION ejercicio ES
@@ -215,6 +218,7 @@ ACCION ejercicio ES
       cant_mat := cant_mat + 1
       LEER(entrada, esc)
     FIN_MIENTRAS
+    corte_año()
 
     ESCRIBIR("La cantidad total de esculturas presentadas en la bienal
     fue de: ", cant_gral, " esculturas.")
@@ -223,3 +227,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>

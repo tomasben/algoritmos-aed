@@ -132,6 +132,7 @@ ACCION ejercicio ES
 
       LEER(entrada, res)
     FIN_MIENTRAS
+    corte_hotel()
 
     CERRAR(entrada)
     CERRAR(salida)

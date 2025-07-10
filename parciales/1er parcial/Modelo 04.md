@@ -248,6 +248,7 @@ ACCION ejercicio ES
 
       LEER(ventas, tik)
     FIN_MIENTRAS
+    corte_ciudad()
 
     CERRAR(ventas)
     CERRAR(salida)

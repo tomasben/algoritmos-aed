@@ -224,6 +224,7 @@ ACCION ejercicio2 ES
 
       LEER(entrada, cad)
     FIN_MIENTRAS
+    corte_cadena()
 
     ESCRIBIR("La cantidad total de hoteles ubicados en ciudades sede del
     evento y con más de 300 habitaciones es de: ", cant_gral)

@@ -225,6 +225,7 @@ ACCION ejercicio ES
 
       LEER(jubilar, doc)
     FIN_MIENTRAS
+    corte_regional()
 
     ESCRIBIR("El total de docentes en condiciones de jubilarse es de: ", cant_gral, " docentes.")
     ESCRIBIR("De los cuales la mayor cantidad fue de ", may_jub, " pertenecientes

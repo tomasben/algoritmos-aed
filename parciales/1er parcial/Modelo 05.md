@@ -268,6 +268,7 @@ ACCION ejercicio ES
 
       LEER(entrada, ficha)
     FIN_MIENTRAS
+    corte_sucur()
 
     CERRAR(entrada)
     CERRAR(salida)

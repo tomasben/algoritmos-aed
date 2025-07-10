@@ -113,6 +113,7 @@ FIN_ACCION
 Un supermercado mayorista que cuenta con un sistema de atención en cajas necesita un informe
 de ventas, para lo cual cuenta con el archivo secuencial VENTAS que contiene información de
 todos los tickets emitidos durante el mes de JUNIO. Para cada venta se registra:
+
 VENTAS, Ordenado por Nro de Caja, Forma de pago, Nro de ticket
 
 | Nro de Caja | Forma de pago (EF, TD y TC) | Nro de ticket | Fecha de venta | Cantidad de artículos | Importe de la venta |
@@ -130,3 +131,92 @@ y total artículos que se pagaron con tarjetas (TD o TC). (1 registro por caja)
 
 3) Informar cuáles son las cajas que tuvieron mayor cantidad de artículos vendidos en efectivo
 que con tarjetas.
+
+```
+ACCION ejercicio ES
+  AMBIENTE
+    Ticket = REGISTRO
+      nro_caja: N(2)
+      metodo: AN(2)
+      nro_tik: N(15)
+      fecha = REGISTRO
+        año: N(4)
+        mes: 1..12
+        dia: 1..31
+      FIN_REGISTRO
+      cant: N(3)
+      importe: real
+    FIN_REGISTRO
+
+    Informe = REGISTRO
+      nro_caja: N(2)
+      tot_efec: real
+      tot_tarj: real
+    FIN_REGISTRO
+
+    ventas: archivo de Ticket ordenado por nro_caja, metodo, nro_tik
+    tik: Ticket
+    salida: archivo de Informe
+    inf: Informe
+
+    cant_caja, cant_metodo, tot_efec, tot_tarj: entero
+    resg_caja: N(2)
+    resg_metodo: AN(2)
+
+    PROCEDIMIENTO corte_caja() ES
+      corte_metodo()
+      ESCRIBIR("Para la caja número ", resg_caja, " se registraron ",
+      cant_caja, " ventas en total.")
+      cant_caja := 0
+
+      SI tot_efec > tot_tarj ENTONCES
+        ESCRIBIR("La caja número ", resg_caja, " registró más ventas en efectivo que con tarjeta.")
+      FIN_SI
+      inf.nro_caja := tik.nro_caja
+      inf.tot_efec := tot_efec
+      inf.tot_tarj := tot.tarj
+      ESCRIBIR(salida, inf)
+
+      tot_efec := 0
+      tot_tarj := 0
+      resg_caja := tik.nro_caja
+    FIN_PROCEDIMIENTO
+
+    PROCEDIMIENTO corte_metodo() ES
+      ESCRIBIR("Se asentaron un total de ", cant_metodo, " ventas para
+      la forma de pago: ", resg_metodo)
+      cant_caja := cant_caja + cant_metodo
+      cant_metodo := 0
+      resg_metodo := tik.metodo
+    FIN_PROCEDIMIENTO
+  PROCESO
+    ABRIR E/ (ventas); LEER(ventas, tik)
+    ABRIR /S (salida)
+
+    resg_caja := tik.nro_caja; resg_metodo := tik.metodo
+    cant_caja := 0; cant_metodo := 0; tot_efec := 0; tot_tarj := 0
+
+    MIENTRAS NO FDA(ventas) HACER
+      SI resg_caja <> tik.nro_caja ENTONCES
+        corte_caja()
+      CONTRARIO
+        SI resg_metodo <> tik.metodo ENTONCES
+          corte_metodo()
+        FIN_SI
+      FIN_SI
+
+      cant_caja := cant_caja + tik.cant
+      SI tik.metodo = "EF" ENTONCES
+        tot_efec := tot_efec + tik.cant
+      CONTRARIO
+        tot_tarj := tot_tarj + tik.cant
+      FIN_SI
+
+      LEER(ventas, tik)
+    FIN_MIENTRAS
+    corte_caja()
+
+    CERRAR(ventas)
+    CERRAR(salida)
+FIN_ACCION
+```
