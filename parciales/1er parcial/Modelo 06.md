@@ -64,7 +64,7 @@ ACCION ejercicio ES
       FIN_MIENTRAS
       AVZ(entrada, car)
 
-      PARA i := 2 HASTA 0, -1 HACER
+      PARA i := 2 HASTA 1, -1 HACER
         estudios := estudios + convertir(car) * 10 ** (i - 1)
         AVZ(entrada, car)
       FIN_MIENTRAS

@@ -132,6 +132,9 @@ y total artículos que se pagaron con tarjetas (TD o TC). (1 registro por caja)
 3) Informar cuáles son las cajas que tuvieron mayor cantidad de artículos vendidos en efectivo
 que con tarjetas.
 
+<details>
+<summary>Solución</summary>
+
 ```
 ACCION ejercicio ES
   AMBIENTE
@@ -220,3 +223,5 @@ ACCION ejercicio ES
     CERRAR(salida)
 FIN_ACCION
 ```
+
+</details>
