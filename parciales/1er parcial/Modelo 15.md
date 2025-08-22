@@ -155,7 +155,8 @@ Se pide escribir un algoritmo para:
 3. Crear un archivo de salida que contenga, por cada estación:
   - Número de Estación
   - Total recaudado en vehículos de tipo UTILITARIO
-4. Informar cuáles son las estaciones de carga que tuvieron mayor recaudación en vehículos tipo SEDAN que en vehículos tipo UTILITARIO.
+4. Informar cuáles son las estaciones de carga que tuvieron mayor recaudación
+en vehículos tipo SEDAN que en vehículos tipo UTILITARIO.
 
 <details>
 <summary>Solución</summary>
