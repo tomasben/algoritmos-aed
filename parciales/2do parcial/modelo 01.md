@@ -1,5 +1,5 @@
 ## Ejercicio 1
-Consigna: la Secretaría de Turismo de la ciudad de Resistencia habilitó el programa "EcoBici"
+La Secretaría de Turismo de la ciudad de Resistencia habilitó el programa "EcoBici"
 para promover el uso de la bici con fines turísticos. Se trata de 6 circuitos para recorrer
 14 barrios de la ciudad. Se cuenta con un archivo secuencial con la información de todas las
 bicicletas disponibles en la ciudad:
