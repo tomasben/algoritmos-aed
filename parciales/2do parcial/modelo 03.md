@@ -79,9 +79,12 @@ ACCION ejercicio ES
       FIN_SI
     FIN_PROCEDIMIENTO
   PROCESO
-    ABRIR E/ (intercambios); LEER(intercambios, int)
-    ABRIR E/ (album); LEER(album, fig)
+    ABRIR E/ (intercambios)
+    ABRIR E/ (album)
     ABRIR /S (salida)
+
+    leer_intercambio()
+    leer_album()
 
     cant_dup := 0
 

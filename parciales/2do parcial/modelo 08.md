@@ -18,8 +18,8 @@ registro de venta con estado "FT".
 alguna venta es del TipoVenta = "Premium" (código de tipo venta=10).
 
 **PRODUCTOS:** *Indexado por Barco y NroPro*
-| Barco (1, 2, 3) | Nro_Pro N(6) | Tipo ("I" = Indumentaria | "P" = Perfumería) | TipoVent N(2) | Fumador (SI | NO) | CAT (1, 2, 3) |
-|-----------------|--------------|----------------------------------------------|---------------|-------------------|---------------|
+| **Barco (1, 2, 3)** | **Nro_Pro N(6)** | Tipo ("I" = Indumentaria - "P" = Perfumería) | TipoVent N(2) | Fumador (SI/NO) | CAT (1, 2, 3) |
+|---------------------|------------------|----------------------------------------------|---------------|-----------------|---------------|
 
 "TIBET" considera 10 tipos de ventas, cuyas nombres de las categorías se almacenan
 en un arreglo donde cada posición se corresponde con el código del tipo de venta
@@ -36,9 +36,9 @@ Dado el escenario anterior, ahora se pide un algoritmo que ayude a tomar decisio
 a partir de las ventas registradas durante el primer semestre del 2017 en los diferentes
 tipos de negocios que ofrecen sus barcos. Para ello cuentan con un archivo de TOTALES.
 
-**TOTALES*+
-| Barco (1, 2, 3) | Fecha | Tipo ("I" = Indumentaria | "P" = Perfumería) | Importe N(7,2) |
-|-----------------|-------|----------------------------------------------|----------------|
+**TOTALES**
+| **Barco (1, 2, 3)** | Fecha | Tipo ("I" = Indumentaria - "P" = Perfumería) | Importe N(7,2) |
+|---------------------|-------|----------------------------------------------|----------------|
 
 Se pide:
 1. Informar el tipo, con mayor importe total de ventas, en qué mes y barco ocurrió

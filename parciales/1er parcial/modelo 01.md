@@ -18,14 +18,6 @@ Se solicita diseñar un algoritmo que:
 cuando el importe sea mayor a 50.000.
 2) Informe, para cada sucursal, cuál fue el ticket de mayor importe (y el importe).
 
-**Razonamiento:**
-- 2 secuencias donde la segunda depende de la secuencia sucursal porque hay una correspondencia entre sucursales y tickets
-- Secuencia sucursal indefinida con subsecuencia palabra terminando en un '&', seguido de un número que sabemos es de 3 dígitos.
-Secuencia tickets, que es definida porque la primer secuencia nos indica la cantidad de tickets correspondientes a esa sucursal, y por
-consecuencia la cantidad de veces que vamos a iterarla con un PARA
-- Crear secuencia de salida con tickets de monto mayor a 50.000
-- Llevar el control del ticket con mayor importe para cada sucursal
-
 <details>
 <summary>Solución</summary>
 
