@@ -31,8 +31,8 @@ realizó más de 10 préstamos y su condición de deudor es NO, se le da 20 día
 fecha actual la pueden obtener de la función “fecha_sistema()” (no es necesario
 definirla) y además a la misma se le puede sumar directamente un entero.
 2. Además calcular:
-  - Total de préstamos realizados
-  - Total de socios dados de alta
+- Total de préstamos realizados
+- Total de socios dados de alta
 
 **ARR_LIBROS:** es un arreglo de 100 libros, donde el contenido es el título y la posición
 dentro del arreglo corresponde al ID.
