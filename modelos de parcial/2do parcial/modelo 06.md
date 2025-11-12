@@ -4,10 +4,8 @@ las ventas realizadas dentro del shopping de cada barco y otro de PRODUCTOS dond
 se registran datos de las marcas disponibles en el shopping.
 
 **VENTAS:** *Ordenado por Nro_Venta*
-| Nro_Venta N(6) | Nro_Pro N(6) | Barco (1, 2, 3) | TipoVenta N(2) |
-|----------------|--------------|-----------------|----------------|
-
-Estado ("D" = disponible | "FT" = Fuera de Temporada)
+| Nro_Venta N(6) | Nro_Pro N(6) | Barco (1, 2, 3) | TipoVenta N(2) | Estado ("D" = disponible - "FT" = Fuera de Temporada) |
+|----------------|--------------|-----------------|----------------|-------------------------------------------------------|
 
 Al finalizar el día, se realiza una depuración del archivo de PRODUCTOS y lo actualiza.
 La actualización debe realizarse según los siguientes puntos:
@@ -18,8 +16,8 @@ registro de venta con estado "FT".
 alguna venta es del TipoVenta = "Premium" (código de tipo venta=10).
 
 **PRODUCTOS:** *Indexado por Barco y NroPro*
-| **Barco (1, 2, 3)** | **Nro_Pro N(6)** | Tipo ("I" = Indumentaria - "P" = Perfumería) | TipoVent N(2) | Fumador (SI/NO) | CAT (1, 2, 3) |
-|---------------------|------------------|----------------------------------------------|---------------|-----------------|---------------|
+| **Barco (1, 2, 3)** | **Nro_Pro N(6)** | Tipo ("I" = Indumentaria - "P" = Perfumería) | TipoVent N(2) | CAT (1, 2, 3) |
+|---------------------|------------------|----------------------------------------------|---------------|---------------|
 
 "TIBET" considera 10 tipos de ventas, cuyas nombres de las categorías se almacenan
 en un arreglo donde cada posición se corresponde con el código del tipo de venta
